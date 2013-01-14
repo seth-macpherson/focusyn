@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Horseshit by soimort</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/soimort/horseshit">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/soimort/horseshit/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/soimort/horseshit/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Horseshit</h1>
+          <p>Small script to configure your hosts file so you don't get distracted during the day</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/soimort">soimort</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>horseshit</h1>
+
+<p><strong>horseshit</strong> is an easy-to-use command line program that blocks websites known to distract us from our work, which is forked from <a href="https://github.com/leftnode/get-shit-done">leftnode/get-shit-done</a>.</p>
+
+<p>Unlike <strong>get-shit-done</strong>, <strong>horseshit</strong> is implemented in Python only, with both 2.x/3.x compatibility. <strong>horseshit</strong> is also a PyPI package, so that it can be installed and updated via <code>pip</code> or <code>easy_install</code>.</p>
+
+<p>Project homepage: <a href="http://www.soimort.org/horseshit">http://www.soimort.org/horseshit</a></p>
+
+<p>Fork me on GitHub: <a href="https://github.com/soimort/horseshit">https://github.com/soimort/horseshit</a></p>
+
+<h2>Installation</h2>
+
+<h3>1. Using the PyPI package:</h3>
+
+<p>Install the PyPI package:</p>
+
+<pre><code>$ pip install horseshit
+</code></pre>
+
+<p>or:</p>
+
+<pre><code>$ easy_install horseshit
+</code></pre>
+
+<h3>2. Using Git:</h3>
+
+<p>Clone the Git repository:</p>
+
+<pre><code>$ git clone git://github.com/soimort/horseshit.git
+</code></pre>
+
+<p>After cloning this repository, you may want to put it in your <code>$PATH</code> and ensure it is executable.</p>
+
+<h2>Usage</h2>
+
+<h2>1. Setting horseshits</h2>
+
+<p><code>horseshits</code> is a no-brainer plain text file contains a load of horseshits that may distract you from work, line by line.</p>
+
+<pre><code>plus.google.com
+twitter.com
+reader.google.com
+reddit.com
+</code></pre>
+
+<p>Also there is an example of what <code>horseshits</code> should be like in: <code>horseshits.example</code>.</p>
+
+<p>On *nix systems, put your <code>horseshits</code> into:</p>
+
+<pre><code>/etc/horseshits
+</code></pre>
+
+<p>You can simply use the example I provided if you'd like:</p>
+
+<pre><code>sudo cp horseshits.example /etc/horseshits
+</code></pre>
+
+<p>Or start writing your own:</p>
+
+<pre><code>sudo vi /etc/horseshits
+</code></pre>
+
+<p>On Windows, put it into your own user directory:</p>
+
+<pre><code>.config/horseshits
+</code></pre>
+
+<h2>2. To get-shit-done</h2>
+
+<p>Execute <code>get-shit-done</code> as root because it modifies your hosts file and restarts your network daemon.</p>
+
+<pre><code>$ sudo get-shit-done work
+</code></pre>
+
+<h2>3. To no longer get-shit-done</h2>
+
+<pre><code>$ sudo get-shit-done play
+</code></pre>
+
+<h2>Additional Tips</h2>
+
+<p>You can, of course, use <code>get-shit-done</code> with your <code>crontab</code>, to control your work time and play time during the day. Whatever, I should say self-control is always the best.</p>
+
+<h2>Acknowledgement</h2>
+
+<p>Thanks to Vic Cherubini, the original author of <strong>get-shit-done</strong>.</p>
+
+<p>Thanks to myself. It finally comes to me that I have to stop my goddamned procrastination and increase focus NOW - for a proper work efficiency.</p>
+
+<p>Shit kickin' productivity!</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
