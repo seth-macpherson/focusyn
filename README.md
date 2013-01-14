@@ -34,7 +34,7 @@ After cloning this repository, you may want to put it in your `$PATH` and ensure
 
 ## Usage
 
-## 1. Setting horseshits
+### 1. Setting horseshits
 
 `horseshits` is a no-brainer plain text file contains a load of horseshits that may distract you from work, line by line.
 
@@ -61,13 +61,13 @@ On Windows, put it into your own user directory:
 
     .config/horseshits
 
-## 2. To get-shit-done
+### 2. To get-shit-done
 
 Execute `get-shit-done` as root because it modifies your hosts file and restarts your network daemon.
 
     $ sudo get-shit-done work
 
-## 3. To no longer get-shit-done
+### 3. To no longer get-shit-done
 
     $ sudo get-shit-done play
 
