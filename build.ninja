@@ -35,6 +35,7 @@ build build: build
 build sdist: sdist
 build bdist: bdist
 build bdist_egg: bdist_egg
+build bdist_wheel: bdist_wheel
 build install: install
 build test: test
 build release: release
