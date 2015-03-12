@@ -1,5 +1,7 @@
 # horseshit
 
+[![PyPI version](https://badge.fury.io/py/horseshit.png)](http://badge.fury.io/py/horseshit)
+
 __horseshit__ is an easy-to-use command line program that blocks websites known to distract us from our work, which is forked from [leftnode/get-shit-done](https://github.com/leftnode/get-shit-done).
 
 Available in Python 2.x/3.x, horseshit is also a PyPI package that can be easily installed and updated via `pip`.
