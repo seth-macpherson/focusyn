@@ -12,7 +12,8 @@ def exit_error(error):
     exit(1)
 
 def horseshit_to_array(horseshit_file):
-    if os.path.exists(horseshit_file):
+    if path.exists(horseshit_file):
+        print("[CONF] %s" % horseshit_file)
         horseshit = open(horseshit_file)
         return [line.split()[0] for line in horseshit if line.split() != []]
     else:
@@ -23,7 +24,7 @@ if "linux" in sys.platform:
     horseshits = [
         "./horseshits",
         "/etc/horseshits",
-        path.expanduser(path.join("~", ".config/horseshits")),
+        path.expanduser(path.join(path.expanduser("~" + os.getenv("SUDO_USER") + "/"), ".config/horseshits")),
     ]
     restart_network_commands = [
         ["/etc/init.d/networking", "restart"],
@@ -37,7 +38,7 @@ elif "darwin" in sys.platform:
     horseshits = [
         "./horseshits",
         "/etc/horseshits",
-        path.expanduser(path.join("~", ".config/horseshits")),
+        path.expanduser(path.join(path.expanduser("~" + os.getenv("SUDO_USER") + "/"), ".config/horseshits")),
     ]
     restart_network_commands = [
         ["dscacheutil", "-flushcache"],
@@ -77,33 +78,35 @@ def work():
     contents = hFile.read()
     if start_token in contents and end_token in contents:
         exit_error("Work mode already set.")
-    
+
     print(start_token, file=hFile)
     for site in set(site_list):
         print("127.0.0.1\t" + site, file=hFile)
         print("127.0.0.1\twww." + site, file=hFile)
     print(end_token, file=hFile)
-    
+
     rehash()
+    print("[DONE] %s items blocked." % len(site_list))
 
 def play():
     hosts_file_handle = open(hosts_file, "r+")
     lines = hosts_file_handle.readlines()
-    
+
     startIndex = -1
-    
+
     for index, line in enumerate(lines):
         if line.strip() == start_token:
             startIndex = index
-    
+
     if startIndex > -1:
         lines = lines[0:startIndex]
-        
+
         hosts_file_handle.seek(0)
         hosts_file_handle.write(''.join(lines))
         hosts_file_handle.truncate()
-        
+
         rehash()
+    print("[DONE] Unblocked.")
 
 def main():
     if getpass.getuser() != "root" and "win32" not in sys.platform:
@@ -113,7 +116,7 @@ def main():
     try:
         {"work": work, "play": play}[sys.argv[1]]()
     except KeyError:
-        exit_error("Usage: " + sys.argv[0] + " [work|play]")	
+        exit_error("Usage: " + sys.argv[0] + " [work|play]")
 
 if __name__ == "__main__":
     main()
