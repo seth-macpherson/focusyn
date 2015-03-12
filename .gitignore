@@ -3,6 +3,7 @@
 /*.egg-info/
 
 *.py[cod]
+*.rst
 
 _*
 .emacs*
