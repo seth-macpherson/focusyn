@@ -2,13 +2,9 @@
 
 __horseshit__ is an easy-to-use command line program that blocks websites known to distract us from our work, which is forked from [leftnode/get-shit-done](https://github.com/leftnode/get-shit-done).
 
-Unlike __get-shit-done__, __horseshit__ is implemented in Python only, with both 2.x/3.x compatibility. __horseshit__ is also a PyPI package, so that it can be installed and updated via `pip` or `easy_install`.
+Available in Python 2.x/3.x, horseshit is also a PyPI package that can be easily installed and updated via `pip`.
 
 Project homepage: <http://www.soimort.org/horseshit>
-
-Fork me on GitHub: <https://github.com/soimort/horseshit>
-
-
 
 ## Installation
 
@@ -16,62 +12,50 @@ Fork me on GitHub: <https://github.com/soimort/horseshit>
 
 Install the PyPI package:
 
-    $ pip install horseshit
+    $ [sudo] pip install horseshit
 
 or:
 
-    $ easy_install horseshit
+    $ [sudo] easy_install horseshit
 
 ### 2. Using Git:
 
 Clone the Git repository:
 
     $ git clone git://github.com/soimort/horseshit.git
-
-After cloning this repository, you may want to put it in your `$PATH` and ensure it is executable.
-
-
+    $ [sudo] python setup.py install
 
 ## Usage
 
-### 1. Setting horseshits
+### 1. Configuration
 
 `horseshits` is a no-brainer plain text file contains a load of horseshits that may distract you from work, line by line.
 
-    plus.google.com
     twitter.com
-    reader.google.com
+    plus.google.com
     reddit.com
-
-Also there is an example of what `horseshits` should be like in: `horseshits.example`.
 
 On *nix systems, put your `horseshits` into:
 
     /etc/horseshits
 
-You can simply use the example I provided if you'd like:
+Or: (recommended!)
 
-    sudo cp horseshits.example /etc/horseshits
+    ~/.config/horseshits
 
-Or start writing your own:
-
-    sudo vi /etc/horseshits
-
-On Windows, put it into your own user directory:
+On Windows, put it into your user directory:
 
     .config/horseshits
 
 ### 2. To get-shit-done
 
-Execute `get-shit-done` as root because it modifies your hosts file and restarts your network daemon.
+Execute it as root because it modifies your hosts file and restarts your network daemon.
 
     $ sudo get-shit-done work
 
 ### 3. To no longer get-shit-done
 
     $ sudo get-shit-done play
-
-
 
 ## Additional Tips
 
@@ -82,7 +66,3 @@ You can, of course, use `get-shit-done` with your `crontab`, to control your wor
 ## Acknowledgement
 
 Thanks to Vic Cherubini, the original author of __get-shit-done__.
-
-Thanks to myself. It finally comes to me that I have to stop my goddamned procrastination and increase focus NOW - for a proper work efficiency.
-
-Shit kickin' productivity!
