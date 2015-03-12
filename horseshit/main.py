@@ -24,7 +24,7 @@ if "linux" in sys.platform:
     horseshits = [
         "./horseshits",
         "/etc/horseshits",
-        path.expanduser(path.join(path.expanduser("~" + os.getenv("SUDO_USER") + "/"), ".config/horseshits")),
+        path.expanduser(path.join(path.expanduser("~" + os.getenv("SUDO_USER") + "/") if os.getenv("SUDO_USER") else "~", ".config/horseshits")),
     ]
     restart_network_commands = [
         ["/etc/init.d/networking", "restart"],
@@ -38,7 +38,7 @@ elif "darwin" in sys.platform:
     horseshits = [
         "./horseshits",
         "/etc/horseshits",
-        path.expanduser(path.join(path.expanduser("~" + os.getenv("SUDO_USER") + "/"), ".config/horseshits")),
+        path.expanduser(path.join(path.expanduser("~" + os.getenv("SUDO_USER") + "/") if os.getenv("SUDO_USER") else "~", ".config/horseshits")),
     ]
     restart_network_commands = [
         ["dscacheutil", "-flushcache"],
