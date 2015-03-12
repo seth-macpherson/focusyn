@@ -1,4 +1,4 @@
-setup = python setup.py
+setup = python3 setup.py
 setup2 = python2 setup.py
 
 build none: phony
@@ -18,6 +18,9 @@ rule bdist
 rule bdist_egg
     command = ($setup bdist_egg; $setup2 bdist_egg)
 
+rule bdist_wheel
+    command = ($setup bdist_wheel; $setup2 bdist_wheel)
+
 rule install
     command = $setup install
 
@@ -25,7 +28,7 @@ rule test
     command = $setup test -s tests
 
 rule release
-    command = (zenity --question; $setup sdist bdist_egg upload; $setup2 sdist bdist_egg upload)
+    command = (zenity --question; $setup sdist bdist_egg upload; $setup2 sdist bdist_wheel upload)
 
 build clean: clean
 build build: build
