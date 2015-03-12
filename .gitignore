@@ -4,6 +4,6 @@
 
 *.py[cod]
 
-.ninja_log
-
-/horseshits
+_*
+.emacs*
+.ninja*
