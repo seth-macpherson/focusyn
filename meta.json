@@ -1,10 +1,9 @@
 {
-    "name": "horseshit",
-    "date": "2015-03-12",
+    "name": "focusyn",
+    "date": "2015-10-28",
 
-    "author": "Mort Yao",
-    "author_email": "mort.yao@gmail.com",
-    "url": "http://www.soimort.org/horseshit/",
+    "author": "Seth MacPherson",
+    "author_email": "seth.macpherson@gmail.com",
     "license": "Public Domain",
 
     "description": "Small script to configure your hosts file so you don't get distracted during the day",
@@ -34,6 +33,6 @@
     ],
 
     "console_scripts": [
-        "get-shit-done = horseshit.main:main"
+        "focusyn = focusyn.main:main"
     ]
 }

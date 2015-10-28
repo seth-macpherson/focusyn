@@ -11,20 +11,20 @@ def exit_error(error):
     print(error, file=sys.stderr)
     exit(1)
 
-def horseshit_to_array(horseshit_file):
-    if path.exists(horseshit_file):
-        print("[CONF] %s" % horseshit_file)
-        horseshit = open(horseshit_file)
-        return [line.split()[0] for line in horseshit if line.split() != []]
+def focusyn_to_array(focusyn_file):
+    if path.exists(focusyn_file):
+        print("[CONF] %s" % focusyn_file)
+        focusyn = open(focusyn_file)
+        return [line.split()[0] for line in focusyn if line.split() != []]
     else:
         return []
 
 if "linux" in sys.platform:
     hosts_file = "/etc/hosts"
-    horseshits = [
-        "./horseshits",
-        "/etc/horseshits",
-        path.expanduser(path.join(path.expanduser("~" + os.getenv("SUDO_USER") + "/") if os.getenv("SUDO_USER") else "~", ".config/horseshits")),
+    distractions = [
+        "./distractions",
+        "/etc/distractions",
+        path.expanduser(path.join(path.expanduser("~" + os.getenv("SUDO_USER") + "/") if os.getenv("SUDO_USER") else "~", ".config/distractions")),
     ]
     restart_network_commands = [
         ["/etc/init.d/networking", "restart"],
@@ -35,10 +35,10 @@ if "linux" in sys.platform:
 
 elif "darwin" in sys.platform:
     hosts_file = "/etc/hosts"
-    horseshits = [
-        "./horseshits",
-        "/etc/horseshits",
-        path.expanduser(path.join(path.expanduser("~" + os.getenv("SUDO_USER") + "/") if os.getenv("SUDO_USER") else "~", ".config/horseshits")),
+    distractions = [
+        "./distractions",
+        "/etc/distractions",
+        path.expanduser(path.join(path.expanduser("~" + os.getenv("SUDO_USER") + "/") if os.getenv("SUDO_USER") else "~", ".config/distractions")),
     ]
     restart_network_commands = [
         ["dscacheutil", "-flushcache"],
@@ -46,9 +46,9 @@ elif "darwin" in sys.platform:
 
 elif "win32" in sys.platform:
     hosts_file = "/Windows/System32/drivers/etc/hosts"
-    horseshits = [
-        "./horseshits",
-        path.expanduser(path.join("~", ".config/horseshits")),
+    distractions = [
+        "./distractions",
+        path.expanduser(path.join("~", ".config/distractions")),
     ]
     restart_network_commands = [
         ["ipconfig", "/flushdns"],
@@ -60,12 +60,12 @@ else:
         ["echo", message],
     ]
 
-start_token = "## Start of horseshits"
-end_token = "## End of horseshits"
+start_token = "## Start of distractions"
+end_token = "## End of distractions"
 
 site_list = []
-for horseshit in horseshits:
-    site_list += horseshit_to_array(horseshit)
+for focusyn in distractions:
+    site_list += focusyn_to_array(focusyn)
 
 def rehash():
     try:

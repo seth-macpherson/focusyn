@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-from horseshit import __version__
-PROJ_METADATA = 'horseshit.json'
+from focusyn import __version__
+PROJ_METADATA = 'meta.json'
 
 import os, json
 here = os.path.abspath(os.path.dirname(__file__))
