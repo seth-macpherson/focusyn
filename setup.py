@@ -6,8 +6,12 @@ PROJ_METADATA = 'meta.json'
 import os, json
 here = os.path.abspath(os.path.dirname(__file__))
 proj_info = json.loads(open(os.path.join(here, PROJ_METADATA)).read())
-README = open(os.path.join(here, 'README.rst')).read()
+README = open(os.path.join(here, 'README.md')).read()
 CHANGELOG = open(os.path.join(here, 'CHANGELOG.rst')).read()
+
+# This creates a symbolic link to our distractions file
+distractions = os.path.join(here, 'distractions')
+os.symlink(distractions, '/etc/distractions')
 
 from setuptools import setup, find_packages
 setup(
@@ -16,7 +20,7 @@ setup(
 
     author = proj_info['author'],
     author_email = proj_info['author_email'],
-    url = proj_info['url'],
+    # url = proj_info['url'],
     license = proj_info['license'],
 
     description = proj_info['description'],

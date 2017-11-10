@@ -6,7 +6,7 @@ __focusyn__ is an easy-to-use command line program that blocks websites known to
 
 Clone the Git repository:
 
-    $ git clone git://github.com/soimort/focusyn.git
+    $ git clone git://github.com/seth-macpherson/focusyn.git
     $ [sudo] python setup.py install
 
 ## Usage
