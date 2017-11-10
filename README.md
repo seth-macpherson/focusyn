@@ -19,34 +19,26 @@ Clone the Git repository:
     plus.google.com
     reddit.com
 
-On *nix systems, put your `distractions` into:
+On *nix systems a distractions file will be symlinked to
 
     /etc/distractions
-
-Or: (recommended!)
-
-    ~/.config/distractions
-
-On Windows, put it into your user directory:
-
-    .config/distractions
 
 ### 2. To focus
 
 Execute it as root because it modifies your hosts file and restarts your network daemon.
 
-    $ sudo focus work
+    $ sudo focusyn work
 
 ### 3. To no longer focus
 
-    $ sudo focus play
+    $ sudo focusyn play
 
 ## Additional Tips
 
-You can, of course, use `focus` with your `crontab`, to control your work time and play time during the day. Whatever, I should say self-control is always the best.
+You can, of course, use `focusyn` with your `crontab`, to control your work time and play time during the day. Whatever, I should say self-control is always the best.
 
 
 
 ## Acknowledgement
 
-Thanks to Vic Cherubini, the original author of __focus__.
+Thanks to Vic Cherubini, the original author.
